@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<FlatList
+  ItemSeparatorComponent={[Function]}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "picture": Object {
+          "uri": "https://...",
+        },
+      },
+      Object {
+        "id": 2,
+        "picture": Object {
+          "uri": "https://...",
+        },
+      },
+    ]
+  }
+  disableVirtualization={false}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={3}
+  onEndReachedThreshold={2}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  showsVerticalScrollIndicator={false}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+/>
+`;
