@@ -1,6 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`grid list renders correctly 1`] = `
+<FlatList
+  ItemSeparatorComponent={[Function]}
+  animationDuration={500}
+  contentContainerStyle={false}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+      Object {
+        "id": 2,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+    ]
+  }
+  disableVirtualization={false}
+  horizontal={false}
+  initialNumToRender={10}
+  itemStyle={Object {}}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={3}
+  onEndReachedThreshold={2}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  showAnimation={false}
+  showsVerticalScrollIndicator={false}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+/>
+`;
+
+exports[`grid list renders showAnimation 1`] = `
+<FlatList
+  ItemSeparatorComponent={[Function]}
+  animationDuration={500}
+  contentContainerStyle={
+    Object {
+      "borderBottomWidth": 5,
+      "borderColor": "#FFFFFF",
+      "borderTopWidth": 5,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+      Object {
+        "id": 2,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+    ]
+  }
+  disableVirtualization={false}
+  horizontal={false}
+  initialNumToRender={10}
+  itemStyle={Object {}}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={3}
+  onEndReachedThreshold={2}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  showAnimation={true}
+  showsVerticalScrollIndicator={false}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+/>
+`;
+
+exports[`grid list renders showSeparator 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
   animationDuration={500}
