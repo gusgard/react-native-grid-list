@@ -31,6 +31,12 @@ export default class GridList extends PureComponent {
   };
 
   componentWillMount() {
+    this.animate();
+  }
+  componentWillUpdate() {
+    this.animate();
+  }
+  animate() {
     if (this.props.showAnimation) {
       const { data, numColumns, animationDuration } = this.props;
       this.animatedValue = [];
@@ -70,20 +76,15 @@ export default class GridList extends PureComponent {
       }
     }
 
-    return showAnimation ? (
-      <Animated.View
-        style={[
-          style,
-          this.itemDimension,
-          { opacity: this.animatedValue[index] },
-          itemStyle,
-        ]}
-      >
-        {renderItem({ item, index, stagger: this.stagger[index] })}
-      </Animated.View>
-    ) : (
+    return (
       <View style={[style, this.itemDimension, itemStyle]}>
-        {renderItem({ item, index })}
+        {showAnimation ? (
+          <Animated.View style={[{ opacity: this.animatedValue[index] }]}>
+            {renderItem({ item, index, stagger: this.stagger[index] })}
+          </Animated.View>
+        ) : (
+          renderItem({ item, index })
+        )}
       </View>
     );
   };
@@ -92,7 +93,7 @@ export default class GridList extends PureComponent {
     const { showSeparator, ...props } = this.props;
     return (
       <FlatList
-        contentContainerStyle={styles.container}
+        contentContainerStyle={showSeparator && styles.container}
         keyExtractor={this._keyExtractor}
         ItemSeparatorComponent={() =>
           showSeparator ? <View style={styles.separator} /> : null

@@ -4,13 +4,7 @@ exports[`renders correctly 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
   animationDuration={500}
-  contentContainerStyle={
-    Object {
-      "borderBottomWidth": 5,
-      "borderColor": "#FFFFFF",
-      "borderTopWidth": 5,
-    }
-  }
+  contentContainerStyle={false}
   data={
     Array [
       Object {
