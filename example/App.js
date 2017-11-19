@@ -6,7 +6,11 @@ import ListGrid from 'react-native-grid-list';
 const logo = {
   uri: 'https://facebook.github.io/react-native/img/opengraph.png',
 };
-const items = [{ id: 1, picture: logo }, { id: 2, picture: logo }];
+const items = [
+  { id: 1, thumbnail: logo },
+  { id: 2, thumbnail: logo },
+  { id: 3, thumbnail: logo },
+];
 
 export default class App extends Component {
   render() {

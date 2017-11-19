@@ -50,11 +50,6 @@ module.exports = {
     'react/display-name': 0,
     'react/prefer-stateless-function': 'off',
   },
-  settings: {
-    'import/resolver': {
-      reactnative: {},
-    },
-  },
   globals: {
     it: false,
     describe: false,

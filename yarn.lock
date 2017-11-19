@@ -1657,27 +1657,12 @@ eslint-config-prettier@^2.1.1:
   dependencies:
     get-stdin "^5.0.1"
 
-eslint-import-resolver-node@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz#5add8106e8c928db2cba232bcd9efa846e3da16c"
-  dependencies:
-    debug "^2.2.0"
-    object-assign "^4.0.1"
-    resolve "^1.1.6"
-
 eslint-import-resolver-node@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.1.tgz#4422574cde66a9a7b099938ee4d508a199e0e3cc"
   dependencies:
     debug "^2.6.8"
     resolve "^1.2.0"
-
-eslint-import-resolver-reactnative@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-reactnative/-/eslint-import-resolver-reactnative-1.0.2.tgz#c8b36405d76e2de17f703b8066d7887cd73afb49"
-  dependencies:
-    eslint-import-resolver-node "^0.2.3"
-    find-root "^1.0.0"
 
 eslint-module-utils@^2.1.1:
   version "2.1.1"
@@ -2009,10 +1994,6 @@ finalhandler@0.4.0:
     escape-html "1.0.2"
     on-finished "~2.3.0"
     unpipe "~1.0.0"
-
-find-root@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
 
 find-up@^1.0.0:
   version "1.1.2"
@@ -4335,7 +4316,7 @@ resolve@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.1.6, resolve@^1.2.0:
+resolve@^1.2.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.5.0.tgz#1f09acce796c9a762579f31b2c1cc4c3cddf9f36"
   dependencies:

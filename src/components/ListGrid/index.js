@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, FlatList, Image } from 'react-native';
 
-import { width, horizontal } from '@themes';
+import { width, horizontal } from '../../themes';
 
 import styles from './styles';
 

@@ -7,13 +7,13 @@ exports[`renders correctly 1`] = `
     Array [
       Object {
         "id": 1,
-        "picture": Object {
+        "thumbnail": Object {
           "uri": "https://...",
         },
       },
       Object {
         "id": 2,
-        "picture": Object {
+        "thumbnail": Object {
           "uri": "https://...",
         },
       },
