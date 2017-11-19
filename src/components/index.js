@@ -1,1 +1,1 @@
-export { default as ListGrid } from './ListGrid';
+export { default as GridList } from './GridList';

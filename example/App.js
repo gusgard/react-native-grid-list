@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import ListGrid from 'react-native-grid-list';
+import GridList from 'react-native-grid-list';
 
 const newImage = {
   0: 'business',
@@ -23,17 +23,22 @@ const image = index => ({
   },
 });
 
-const items = Array.from(Array(30)).map((_, index) => image(index));
+const items = Array.from(Array(20)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
-  renderItem = ({ item }) => (
-    <Image style={styles.image} source={item.thumbnail} />
+  renderItem = ({ item, stagger }) => (
+    <Image
+      style={styles.image}
+      source={item.thumbnail}
+      onLoad={() => stagger.start()}
+    />
   );
 
   render() {
     return (
       <View style={styles.container}>
-        <ListGrid
+        <GridList
+          showAnimation
           showSeparator
           data={items}
           numColumns={3}

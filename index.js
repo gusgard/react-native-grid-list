@@ -1,3 +1,3 @@
-import { ListGrid } from './src/components';
+import { GridList } from './src/components';
 
-export default ListGrid;
+export default GridList;

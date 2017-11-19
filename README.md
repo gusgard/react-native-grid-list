@@ -1,4 +1,4 @@
-# :godmode: Grid list component
+# :foggy: Grid list component
 
 <p align="left">
   <a href="https://npmjs.org/package/react-native-grid-list"><img alt="npm version" src="http://img.shields.io/npm/v/react-native-grid-list.svg"></a>
@@ -22,9 +22,15 @@ npm install react-native-grid-list --save
 
 ## Example
 
+### Expo
+
+[Example](https://snack.expo.io/@gusgard/react-native-grid-list)
+
+### Code
+
 ```js
-import React, { Component } from 'react';
-import { StyleSheet, Image } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, StyleSheet, Image } from 'react-native';
 
 import GridList from 'react-native-grid-list';
 
@@ -43,7 +49,7 @@ export default class App extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <ListGrid
+        <GridList
           showSeparator
           data={items}
           numColumns={3}
@@ -67,19 +73,17 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Expo
-
-[Example QR](https://snack.expo.io/girdList)
-
 ## Props
 
-| Prop          |  Default   |      Type       | Description                                |
-| :------------ | :--------: | :-------------: | :----------------------------------------- |
-| numColumns    |     3      |    `number`     | Number of elements in a row                |
-| data          | _required_ |     `array`     | Data used when render items                |
-| renderItem    | _required_ |     `func`      | Function that render each item of the grid |
-| itemStyle     |     {}     | `ViewPropTypes` | Style for the wrapper of item              |
-| showSeparator |   false    |     `bool`      | Show a separator between items             |
+| Prop              |  Default   |      Type       | Description                                |
+| :---------------- | :--------: | :-------------: | :----------------------------------------- |
+| numColumns        |     3      |    `number`     | Number of elements in a row                |
+| data              | _required_ |     `array`     | Data used when render items                |
+| renderItem        | _required_ |     `func`      | Function that render each item of the grid |
+| itemStyle         |     {}     | `ViewPropTypes` | Style for the wrapper of item              |
+| showSeparator     |   false    |     `bool`      | Show a separator between items             |
+| showAnimation     |   false    |     `bool`      | Show an animation when load item           |
+| animationDuration |    500     |    `number`     | Duration of the animation                  |
 
 ## Author
 

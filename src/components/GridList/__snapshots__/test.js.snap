@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
+  animationDuration={500}
   contentContainerStyle={
     Object {
       "borderBottomWidth": 5,
@@ -36,6 +37,7 @@ exports[`renders correctly 1`] = `
   onEndReachedThreshold={2}
   renderItem={[Function]}
   scrollEventThrottle={50}
+  showAnimation={false}
   showsVerticalScrollIndicator={false}
   updateCellsBatchingPeriod={50}
   windowSize={21}
