@@ -1,21 +1,44 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { PureComponent } from 'react';
+import { Image, StyleSheet, View } from 'react-native';
 import ListGrid from 'react-native-grid-list';
 
-const logo = {
-  uri: 'https://facebook.github.io/react-native/img/opengraph.png',
+const newImage = {
+  0: 'business',
+  1: 'cats',
+  2: 'city',
+  3: 'food',
+  4: 'nightlife',
+  5: 'fashion',
+  6: 'people',
+  7: 'nature',
+  8: 'animals',
+  9: 'imageUrl',
 };
-const items = [
-  { id: 1, thumbnail: logo },
-  { id: 2, thumbnail: logo },
-  { id: 3, thumbnail: logo },
-];
 
-export default class App extends Component {
+const image = index => ({
+  thumbnail: {
+    uri: `https://lorempixel.com/200/200/${
+      newImage[index % (Object.keys(newImage).length - 1)]
+    }`,
+  },
+});
+
+const items = Array.from(Array(30)).map((_, index) => image(index));
+
+export default class App extends PureComponent {
+  renderItem = ({ item }) => (
+    <Image style={styles.image} source={item.thumbnail} />
+  );
+
   render() {
     return (
       <View style={styles.container}>
-        <ListGrid data={items} />
+        <ListGrid
+          showSeparator
+          data={items}
+          numColumns={3}
+          renderItem={this.renderItem}
+        />
       </View>
     );
   }
@@ -24,6 +47,11 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
   },
 });

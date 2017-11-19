@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { colors } from '../../themes';
 
-const borderWidth = 2;
+const borderWidth = 5;
 
 export default StyleSheet.create({
   imageLeft: {
@@ -10,19 +10,22 @@ export default StyleSheet.create({
     borderColor: colors.white,
   },
   imageRight: {
+    borderLeftWidth: borderWidth,
     borderRightWidth: borderWidth,
     borderColor: colors.white,
   },
   imageCenter: {
-    borderRightWidth: borderWidth,
     borderLeftWidth: borderWidth,
     borderColor: colors.white,
   },
-  image: {
-    alignSelf: 'center',
-  },
   separator: {
     borderColor: colors.white,
-    borderWidth,
+    // paddingVertical: borderWidth * 0.5,
+    borderWidth: borderWidth * 0.5,
+  },
+  container: {
+    borderTopWidth: borderWidth,
+    borderBottomWidth: borderWidth,
+    borderColor: colors.white,
   },
 });

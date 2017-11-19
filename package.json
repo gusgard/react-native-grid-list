@@ -8,6 +8,18 @@
     "type": "git",
     "url": "git+https://github.com/gusgard/react-native-grid-list.git"
   },
+  "keywords": [
+    "grid list",
+    "grid",
+    "grid view",
+    "grid component",
+    "grid layout",
+    "react native",
+    "react-native",
+    "react",
+    "flatlist",
+    "flatlist grid"
+  ],
   "scripts": {
     "lint": "eslint index.js src",
     "lint-fix": "eslint index.js src --fix",

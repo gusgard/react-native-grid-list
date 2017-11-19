@@ -3,6 +3,13 @@
 exports[`renders correctly 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
+  contentContainerStyle={
+    Object {
+      "borderBottomWidth": 5,
+      "borderColor": "#FFFFFF",
+      "borderTopWidth": 5,
+    }
+  }
   data={
     Array [
       Object {
@@ -22,6 +29,7 @@ exports[`renders correctly 1`] = `
   disableVirtualization={false}
   horizontal={false}
   initialNumToRender={10}
+  itemStyle={Object {}}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   numColumns={3}

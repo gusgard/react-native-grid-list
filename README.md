@@ -6,6 +6,8 @@
   <img alt="npm version" src="https://travis-ci.org/gusgard/react-native-grid-list.svg?branch=master">
 </p>
 
+![Demo](./demo.gif)
+
 ## Installation
 
 ```
@@ -22,41 +24,46 @@ npm install react-native-grid-list --save
 
 ```js
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Image,
-} from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 
 import GridList from 'react-native-grid-list';
 
 const items = [
-  { thumbnail: { uri:'http://lorempixel.com/640/480/animals'} },
-  { thumbnail: {uri: 'https://facebook.github.io/react-native/img/favicon.png'} },
-  { thumbnail: {uri: 'http://lorempixel.com/640/480/nature'} },
+  { thumbnail: { uri: 'https://lorempixel.com/200/200/animals' } },
+  { thumbnail: { uri: 'https://lorempixel.com/200/200/city' } },
+  { thumbnail: { uri: 'https://lorempixel.com/200/200/nature' } },
+  { thumbnail: { uri: 'https://lorempixel.com/200/200/cats' } },
 ];
 
-export default class ExampleGrid extends Component {
-
+export default class App extends PureComponent {
   renderItem = ({ item, index }) => (
-    <Image
-      style={styles.image}
-      source={item.thumbnail}
-    />
-  )
+    <Image style={styles.image} source={item.thumbnail} />
+  );
 
   render() {
     return (
-      <GridList
-        renderItem={this.renderItem}
-        data={items}
-        numColumns={3}
-      />
+      <View style={styles.container}>
+        <ListGrid
+          showSeparator
+          data={items}
+          numColumns={3}
+          renderItem={this.renderItem}
+        />
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  ...
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+  },
 });
 ```
 
@@ -66,11 +73,13 @@ const styles = StyleSheet.create({
 
 ## Props
 
-| Prop       |  Default   |   Type   | Description                                |
-| :--------- | :--------: | :------: | :----------------------------------------- |
-| numColumns |     3      | `number` | Number of elements in a row                |
-| data       | _required_ | `array`  | Data used when render items                |
-| renderItem | _required_ |  `func`  | Function that render each item of the grid |
+| Prop          |  Default   |      Type       | Description                                |
+| :------------ | :--------: | :-------------: | :----------------------------------------- |
+| numColumns    |     3      |    `number`     | Number of elements in a row                |
+| data          | _required_ |     `array`     | Data used when render items                |
+| renderItem    | _required_ |     `func`      | Function that render each item of the grid |
+| itemStyle     |     {}     | `ViewPropTypes` | Style for the wrapper of item              |
+| showSeparator |   false    |     `bool`      | Show a separator between items             |
 
 ## Author
 
