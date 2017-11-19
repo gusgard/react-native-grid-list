@@ -9,6 +9,10 @@
     "url": "git+https://github.com/gusgard/react-native-grid-list.git"
   },
   "description": "React native grid list component",
+  "bugs": {
+    "url": "https://github.com/gusgard/react-native-grid-list/issues"
+  },
+  "homepage": "https://github.com/gusgard/react-native-grid-list#readme",
   "keywords": [
     "grid list",
     "grid",
@@ -58,17 +62,10 @@
   "jest": {
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "./enzyme.js",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "./node_modules/enzyme-to-json/serializer"
-    ]
+    "modulePathIgnorePatterns": ["<rootDir>/example/node_modules/"],
+    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"]
   },
   "pre-commit": {
-    "run": [
-      "lint",
-      "test"
-    ]
+    "run": ["lint", "test"]
   }
 }
