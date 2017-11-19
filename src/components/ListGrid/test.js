@@ -7,6 +7,6 @@ const logo = { uri: 'https://...' };
 const items = [{ id: 1, thumbnail: logo }, { id: 2, thumbnail: logo }];
 
 it('renders correctly', () => {
-  const wrapper = shallow(<ListGrid items={items} />);
+  const wrapper = shallow(<ListGrid data={items} />);
   expect(wrapper).toMatchSnapshot();
 });

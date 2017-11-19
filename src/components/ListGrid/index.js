@@ -7,36 +7,36 @@ import { width, horizontal } from '../../themes';
 import styles from './styles';
 
 const space = horizontal.xxSmall;
-const calcGridDimension = numberOfColumns => ({
-  height: width / numberOfColumns - space,
-  width: width / numberOfColumns - space,
+const calcGridDimension = numColumns => ({
+  height: width / numColumns - space,
+  width: width / numColumns - space,
 });
 
 export default class ListGrid extends PureComponent {
   static propTypes = {
-    items: PropTypes.array.isRequired,
-    numberOfColumns: PropTypes.number.isRequired,
+    data: PropTypes.array.isRequired,
+    numColumns: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
-    numberOfColumns: 3,
+    numColumns: 3,
   };
 
   state = {
     index: 0,
   };
 
-  itemDimension = calcGridDimension(this.props.numberOfColumns);
+  itemDimension = calcGridDimension(this.props.numColumns);
 
   keyExtractor = item => item.id;
 
   renderItem = ({ item, index }) => {
-    const { numberOfColumns } = this.props;
-    const position = index % numberOfColumns;
+    const { numColumns } = this.props;
+    const position = index % numColumns;
     let style = styles.imageCenter;
     if (position === 0) {
       style = styles.imageRight;
-    } else if (position === numberOfColumns - 1) {
+    } else if (position === numColumns - 1) {
       style = styles.imageLeft;
     }
     return (
@@ -51,11 +51,11 @@ export default class ListGrid extends PureComponent {
   };
 
   render() {
-    const { items, numberOfColumns } = this.props;
+    const { data, numColumns } = this.props;
     return (
       <FlatList
-        numColumns={numberOfColumns}
-        data={items}
+        numColumns={numColumns}
+        data={data}
         keyExtractor={this.keyExtractor}
         renderItem={this.renderItem}
         showsVerticalScrollIndicator={false}

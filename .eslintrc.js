@@ -24,7 +24,7 @@ module.exports = {
     'consistent-return': 1,
     'global-require': 0,
     'import/extensions': [2, 'never'],
-    'import/no-extraneous-dependencies': ['error', { packageDir: './' }],
+    'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': [2, { ignore: ['@'] }],
     'import/prefer-default-export': 'off',
     'import/no-named-as-default-member': 'off',
