@@ -73,6 +73,8 @@ const styles = StyleSheet.create({
 });
 ```
 
+Check the code [here](./example/README.md)
+
 You can use all the props from FlatList:
 http://facebook.github.io/react-native/docs/flatlist.html
 
