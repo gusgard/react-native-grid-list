@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Text, ScrollView, Image, StyleSheet, View } from 'react-native';
 import GridList from 'react-native-grid-list';
 
 const newImage = {
@@ -23,28 +23,73 @@ const image = index => ({
   },
 });
 
-const items = Array.from(Array(20)).map((_, index) => image(index));
+const itemsAnimationAndSeparator = Array.from(Array(5)).map((_, index) =>
+  image(index),
+);
+const itemsAnimation = Array.from(Array(6)).map((_, index) => image(index));
+const itemsSeparator = Array.from(Array(4)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
-  renderItem = ({ item, stagger }) => (
+  renderItemAnimationAndSeparator = ({ item, animation }) => (
+    <Image
+      style={styles.imageRadius}
+      source={item.thumbnail}
+      onLoad={() => animation.start()}
+    />
+  );
+  renderItemAnimation = ({ item, animation }) => (
     <Image
       style={styles.image}
       source={item.thumbnail}
-      onLoad={() => stagger.start()}
+      onLoad={() => animation.start()}
     />
+  );
+  renderItemSeparator = ({ item }) => (
+    <Image style={styles.image} source={item.thumbnail} />
   );
 
   render() {
     return (
-      <View style={styles.container}>
-        <GridList
-          showAnimation
-          showSeparator
-          data={items}
-          numColumns={3}
-          renderItem={this.renderItem}
-        />
-      </View>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        {/* AnimationAndSeparator */}
+        <Text>Separator and animation when loading</Text>
+        <View style={styles.girdAnimationAndSeparator}>
+          <GridList
+            showAnimation
+            showSeparator
+            data={itemsAnimationAndSeparator}
+            numColumns={3}
+            renderItem={this.renderItemAnimationAndSeparator}
+            separatorBorderWidth={10}
+            separatorBorderColor={'black'}
+            animationInitialBackgroundColor={'white'}
+          />
+        </View>
+
+        {/* Animation */}
+        <Text>Animation when loading</Text>
+        <View style={styles.girdAnimation}>
+          <GridList
+            showAnimation
+            data={itemsAnimation}
+            numColumns={4}
+            renderItem={this.renderItemAnimation}
+          />
+        </View>
+
+        {/* Separator */}
+        <Text>Separator</Text>
+        <View style={styles.girdSeparator}>
+          <GridList
+            showSeparator
+            data={itemsSeparator}
+            numColumns={2}
+            renderItem={this.renderItemSeparator}
+            separatorBorderWidth={25}
+            separatorBorderColor={'white'}
+          />
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -52,11 +97,24 @@ export default class App extends PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    margin: '5%',
+  },
+  girdAnimationAndSeparator: {
+    backgroundColor: 'black',
+  },
+  girdAnimation: {
+    backgroundColor: 'tomato',
+  },
+  girdSeparator: {
+    borderWidth: 1,
+  },
+  imageRadius: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
   },
   image: {
     width: '100%',
     height: '100%',
-    borderRadius: 10,
   },
 });

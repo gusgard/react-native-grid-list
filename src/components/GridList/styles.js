@@ -1,31 +1,34 @@
-import { StyleSheet } from 'react-native';
+import { width } from '../../themes';
 
-import { colors } from '../../themes';
-
-const borderWidth = 5;
-
-export default StyleSheet.create({
-  imageLeft: {
-    borderLeftWidth: borderWidth,
-    borderColor: colors.white,
+export default ({
+  numColumns,
+  separatorBorderWidth,
+  separatorBorderColor,
+  animationInitialBackgroundColor,
+}) => ({
+  itemContainer: {
+    maxHeight: width / numColumns,
+    flex: 1,
   },
-  imageRight: {
-    borderLeftWidth: borderWidth,
-    borderRightWidth: borderWidth,
-    borderColor: colors.white,
+  itemContainerSeparator: {
+    flex: 1,
+    borderLeftWidth: separatorBorderWidth,
+    borderColor: separatorBorderColor,
   },
-  imageCenter: {
-    borderLeftWidth: borderWidth,
-    borderColor: colors.white,
+  itemContainerAnimationStart: {
+    backgroundColor: animationInitialBackgroundColor,
+  },
+  itemContainerAnimationEnd: {
+    backgroundColor: separatorBorderColor,
   },
   separator: {
-    borderColor: colors.white,
-    // paddingVertical: borderWidth * 0.5,
-    borderWidth: borderWidth * 0.5,
+    borderColor: separatorBorderColor,
+    borderWidth: separatorBorderWidth * 0.5,
   },
   container: {
-    borderTopWidth: borderWidth,
-    borderBottomWidth: borderWidth,
-    borderColor: colors.white,
+    borderRightWidth: separatorBorderWidth,
+    borderTopWidth: separatorBorderWidth,
+    borderBottomWidth: separatorBorderWidth,
+    borderColor: separatorBorderColor,
   },
 });
