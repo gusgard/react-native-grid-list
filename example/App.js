@@ -23,14 +23,14 @@ const image = index => ({
   },
 });
 
-const items = Array.from(Array(20)).map((_, index) => image(index));
+const items = Array.from(Array(14)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
-  renderItem = ({ item, stagger }) => (
+  renderItem = ({ item, animation }) => (
     <Image
       style={styles.image}
       source={item.thumbnail}
-      onLoad={() => stagger.start()}
+      onLoad={() => animation.start()}
     />
   );
 
@@ -43,6 +43,9 @@ export default class App extends PureComponent {
           data={items}
           numColumns={3}
           renderItem={this.renderItem}
+          separatorBorderWidth={5}
+          separatorBorderColor={'tomato'}
+          animationInitialBackgroundColor={'beige'}
         />
       </View>
     );
@@ -52,7 +55,7 @@ export default class App extends PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'tomato',
   },
   image: {
     width: '100%',

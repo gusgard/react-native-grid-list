@@ -4,6 +4,7 @@ exports[`grid list renders correctly 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
   animationDuration={500}
+  animationInitialBackgroundColor="#FFFFFF"
   contentContainerStyle={false}
   data={
     Array [
@@ -31,6 +32,8 @@ exports[`grid list renders correctly 1`] = `
   onEndReachedThreshold={2}
   renderItem={[Function]}
   scrollEventThrottle={50}
+  separatorBorderColor="#FFFFFF"
+  separatorBorderWidth={0}
   showAnimation={false}
   showsVerticalScrollIndicator={false}
   updateCellsBatchingPeriod={50}
@@ -42,11 +45,13 @@ exports[`grid list renders showAnimation 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
   animationDuration={500}
+  animationInitialBackgroundColor="#FFFFFF"
   contentContainerStyle={
     Object {
-      "borderBottomWidth": 5,
+      "borderBottomWidth": 0,
       "borderColor": "#FFFFFF",
-      "borderTopWidth": 5,
+      "borderRightWidth": 0,
+      "borderTopWidth": 0,
     }
   }
   data={
@@ -75,6 +80,8 @@ exports[`grid list renders showAnimation 1`] = `
   onEndReachedThreshold={2}
   renderItem={[Function]}
   scrollEventThrottle={50}
+  separatorBorderColor="#FFFFFF"
+  separatorBorderWidth={0}
   showAnimation={true}
   showsVerticalScrollIndicator={false}
   updateCellsBatchingPeriod={50}
@@ -86,11 +93,13 @@ exports[`grid list renders showSeparator 1`] = `
 <FlatList
   ItemSeparatorComponent={[Function]}
   animationDuration={500}
+  animationInitialBackgroundColor="#FFFFFF"
   contentContainerStyle={
     Object {
-      "borderBottomWidth": 5,
+      "borderBottomWidth": 0,
       "borderColor": "#FFFFFF",
-      "borderTopWidth": 5,
+      "borderRightWidth": 0,
+      "borderTopWidth": 0,
     }
   }
   data={
@@ -119,6 +128,8 @@ exports[`grid list renders showSeparator 1`] = `
   onEndReachedThreshold={2}
   renderItem={[Function]}
   scrollEventThrottle={50}
+  separatorBorderColor="#FFFFFF"
+  separatorBorderWidth={0}
   showAnimation={false}
   showsVerticalScrollIndicator={false}
   updateCellsBatchingPeriod={50}
