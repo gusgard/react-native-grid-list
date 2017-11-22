@@ -46,14 +46,48 @@ exports[`grid list renders showAnimation 1`] = `
   ItemSeparatorComponent={[Function]}
   animationDuration={500}
   animationInitialBackgroundColor="#FFFFFF"
-  contentContainerStyle={
-    Object {
-      "borderBottomWidth": 0,
-      "borderColor": "#FFFFFF",
-      "borderRightWidth": 0,
-      "borderTopWidth": 0,
-    }
+  contentContainerStyle={false}
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+      Object {
+        "id": 2,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+    ]
   }
+  disableVirtualization={false}
+  horizontal={false}
+  initialNumToRender={10}
+  itemStyle={Object {}}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={3}
+  onEndReachedThreshold={2}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  separatorBorderColor="#FFFFFF"
+  separatorBorderWidth={0}
+  showAnimation={true}
+  showsVerticalScrollIndicator={false}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+/>
+`;
+
+exports[`grid list renders showAnimation with duration and initialBackground setted 1`] = `
+<FlatList
+  ItemSeparatorComponent={[Function]}
+  animationDuration={1000}
+  animationInitialBackgroundColor="beige"
+  contentContainerStyle={false}
   data={
     Array [
       Object {
@@ -130,6 +164,54 @@ exports[`grid list renders showSeparator 1`] = `
   scrollEventThrottle={50}
   separatorBorderColor="#FFFFFF"
   separatorBorderWidth={0}
+  showAnimation={false}
+  showsVerticalScrollIndicator={false}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+/>
+`;
+
+exports[`grid list renders showSeparator with border and width setted 1`] = `
+<FlatList
+  ItemSeparatorComponent={[Function]}
+  animationDuration={500}
+  animationInitialBackgroundColor="#FFFFFF"
+  contentContainerStyle={
+    Object {
+      "borderBottomWidth": 5,
+      "borderColor": "tomato",
+      "borderRightWidth": 5,
+      "borderTopWidth": 5,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+      Object {
+        "id": 2,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+    ]
+  }
+  disableVirtualization={false}
+  horizontal={false}
+  initialNumToRender={10}
+  itemStyle={Object {}}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={3}
+  onEndReachedThreshold={2}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  separatorBorderColor="tomato"
+  separatorBorderWidth={5}
   showAnimation={false}
   showsVerticalScrollIndicator={false}
   updateCellsBatchingPeriod={50}

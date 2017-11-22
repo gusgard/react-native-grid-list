@@ -29,11 +29,38 @@ describe('grid list', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renders showSeparator with border and width setted', () => {
+    const wrapper = shallow(
+      <GridList
+        separatorBorderWidth={5}
+        separatorBorderColor={'tomato'}
+        showSeparator
+        data={items}
+        renderItem={({ item }) => <Image source={item.thumbnail} />}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('renders showAnimation', () => {
     const wrapper = shallow(
       <GridList
-        showSeparator
         showAnimation
+        data={items}
+        renderItem={({ item, stagger }) => (
+          <Image source={item.thumbnail} onLoad={() => stagger.start()} />
+        )}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders showAnimation with duration and initialBackground setted', () => {
+    const wrapper = shallow(
+      <GridList
+        showAnimation
+        animationInitialBackgroundColor={'beige'}
+        animationDuration={1000}
         data={items}
         renderItem={({ item, stagger }) => (
           <Image source={item.thumbnail} onLoad={() => stagger.start()} />
