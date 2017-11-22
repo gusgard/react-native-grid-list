@@ -52,7 +52,6 @@ export default class GridList extends PureComponent {
       stylesOptions.animationInitialBackgroundColor = animationInitialBackgroundColor;
     }
     this.styles = generateStyles(stylesOptions);
-    console.log(this.styles);
 
     this.animate();
   }
@@ -82,17 +81,9 @@ export default class GridList extends PureComponent {
     const { showAnimation, showSeparator, renderItem, itemStyle } = this.props;
 
     const viewStyles = [];
-    if (index === this.props.data.length - 1) {
-      viewStyles.push(this.styles.itemContainerLast);
-    } else {
-      viewStyles.push(this.styles.itemContainer);
-    }
+    viewStyles.push(this.styles.itemContainer);
     if (showSeparator) {
-      if (index === this.props.data.length - 1) {
-        viewStyles.push(this.styles.itemContainerSeparatorLast);
-      } else {
-        viewStyles.push(this.styles.itemContainerSeparator);
-      }
+      viewStyles.push(this.styles.itemContainerSeparator);
     }
     if (showAnimation) {
       viewStyles.push(this.styles.itemContainerAnimationStart);

@@ -7,22 +7,12 @@ export default ({
   animationInitialBackgroundColor,
 }) => ({
   itemContainer: {
-    height: width / numColumns,
-    width: width / numColumns,
+    maxHeight: width / numColumns,
+    flex: 1,
   },
   itemContainerSeparator: {
-    width: width / numColumns - separatorBorderWidth / numColumns,
+    flex: 1,
     borderLeftWidth: separatorBorderWidth,
-    borderColor: separatorBorderColor,
-  },
-  itemContainerLast: {
-    height: width / numColumns,
-    width: width / numColumns,
-  },
-  itemContainerSeparatorLast: {
-    borderLeftWidth: separatorBorderWidth,
-    width: (width + (numColumns - 1) * separatorBorderWidth) / numColumns,
-    borderRightWidth: separatorBorderWidth,
     borderColor: separatorBorderColor,
   },
   itemContainerAnimationStart: {
