@@ -69,4 +69,14 @@ describe('grid list', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders children', () => {
+    const wrapper = shallow(
+      <GridList>
+        <Image source={items[0].thumbnail} />
+        <Image source={items[1].thumbnail} />
+      </GridList>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });
