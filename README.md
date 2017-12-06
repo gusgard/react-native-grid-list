@@ -1,10 +1,10 @@
 # :foggy: Grid list component
 
-<p align="left">
-  <a href="https://npmjs.org/package/react-native-grid-list"><img alt="npm version" src="http://img.shields.io/npm/v/react-native-grid-list.svg"></a>
-  <a href="https://npmjs.org/package/react-native-grid-list"><img alt="npm version" src="http://img.shields.io/npm/dm/react-native-grid-list.svg"></a>
-  <img alt="npm version" src="https://travis-ci.org/gusgard/react-native-grid-list.svg?branch=master">
-</p>
+![platforms](https://img.shields.io/badge/platforms-Android%20|%20iOS-brightgreen.svg)
+[![npm](https://img.shields.io/npm/v/react-native-grid-list.svg)](https://www.npmjs.com/package/react-native-grid-list)
+[![npm](https://img.shields.io/npm/dm/react-native-grid-list.svg)](https://www.npmjs.com/package/react-native-grid-list)
+[![travis](https://travis-ci.org/gusgard/react-native-grid-list.svg?branch=master)](https://travis-ci.org/gusgard/react-native-grid-list)
+![license](https://img.shields.io/npm/l/react-native-grid-list.svg)
 
 ![Demo](./demo.gif)
 
