@@ -20,6 +20,8 @@ export default ({
   },
   itemContainerAnimationEnd: {
     backgroundColor: separatorBorderColor,
+    width: '100%',
+    height: '100%',
   },
   separator: {
     borderColor: separatorBorderColor,

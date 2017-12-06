@@ -80,20 +80,21 @@ http://facebook.github.io/react-native/docs/flatlist.html
 
 ## Props
 
-| Prop                            |  Default   |      Type       | Description                                |
-| :------------------------------ | :--------: | :-------------: | :----------------------------------------- |
-| numColumns                      |     3      |    `number`     | Number of elements in a row                |
-| data                            | _required_ |     `array`     | Data used when render items                |
-| renderItem                      | _required_ |     `func`      | Function that render each item of the grid |
-| itemStyle                       |     {}     | `ViewPropTypes` | Style for the wrapper of item              |
+| Prop                            |              Default               |      Type       | Description                                |
+| :------------------------------ | :--------------------------------: | :-------------: | :----------------------------------------- |
+| children                        |                 -                  |     `node`      | Children elements                          |
+| data                            | _not required if children is used_ |     `array`     | Data to use in renderItem                  |
+| renderItem                      | _not required if children is used_ |     `func`      | Function that render each item of the grid |
+| numColumns                      |                 3                  |    `number`     | Number of elements in a row                |
+| itemStyle                       |                 {}                 | `ViewPropTypes` | Style for the wrapper of item              |
 | **Separator**                   |
-| showSeparator                   |   false    |     `bool`      | Show a separator between items             |
-| separatorBorderWidth            |     0      |    `number`     | Set separator width                        |
-| separatorBorderColor            |  'white'   |    `string`     | Set separator color                        |
+| showSeparator                   |               false                |     `bool`      | Show a separator between items             |
+| separatorBorderWidth            |                 0                  |    `number`     | Set separator width                        |
+| separatorBorderColor            |              'white'               |    `string`     | Set separator color                        |
 | **Animation**                   |
-| showAnimation                   |   false    |     `bool`      | Show an animation when load item           |
-| animationInitialBackgroundColor |  'white'   |    `string`     | Set initial backgroundColor for animation  |
-| animationDuration               |    500     |    `number`     | Duration of the animation                  |
+| showAnimation                   |               false                |     `bool`      | Show an animation when load item           |
+| animationInitialBackgroundColor |              'white'               |    `string`     | Set initial backgroundColor for animation  |
+| animationDuration               |                500                 |    `number`     | Duration of the animation                  |
 
 ## Author
 

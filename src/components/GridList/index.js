@@ -9,14 +9,27 @@ export default class GridList extends PureComponent {
   static propTypes = {
     animationDuration: PropTypes.number,
     animationInitialBackgroundColor: PropTypes.string,
-    data: PropTypes.array.isRequired,
     itemStyle: ViewPropTypes.style,
     numColumns: PropTypes.number.isRequired,
-    renderItem: PropTypes.func.isRequired,
     separatorBorderColor: PropTypes.string,
     separatorBorderWidth: PropTypes.number,
     showAnimation: PropTypes.bool,
     showSeparator: PropTypes.bool,
+
+    data: PropTypes.array,
+    renderItem: PropTypes.func,
+
+    // Only is allowed children or data not both
+    children(props, propName) {
+      const { data } = props;
+      if (!props[propName] && data && data.length === 0) {
+        return new Error('Invalid props, `data` or `children` is required');
+      }
+      if (data && data.length !== 0 && !props.renderItem) {
+        return new Error('Invalid props, `renderItem` is required');
+      }
+      return undefined;
+    },
   };
 
   static defaultProps = {
@@ -53,17 +66,30 @@ export default class GridList extends PureComponent {
     }
     this.styles = generateStyles(stylesOptions);
 
+    this.setup(this.props);
     this.animate();
   }
-  componentWillUpdate() {
+  componentWillUpdate(nextProps) {
+    this.setup(nextProps);
     this.animate();
   }
+
+  setup = ({ children, data, renderItem }) => {
+    if (children) {
+      this._data = children;
+      this._renderItem = this.renderChildren;
+    } else if (data) {
+      this._data = data;
+      this._renderItem = renderItem;
+    }
+  };
+
   animate() {
     if (this.props.showAnimation) {
-      const { data, numColumns, animationDuration } = this.props;
+      const { numColumns, animationDuration } = this.props;
       this.animatedValue = [];
 
-      this.animations = data.map((_, index) => {
+      this.animations = this._data.map((_, index) => {
         this.animatedValue[index] = new Animated.Value(0);
         return Animated.stagger(0, [
           Animated.timing(this.animatedValue[index], {
@@ -77,8 +103,8 @@ export default class GridList extends PureComponent {
 
   _keyExtractor = (item, index) => index;
 
-  _renderItem = ({ item, index }) => {
-    const { showAnimation, showSeparator, renderItem, itemStyle } = this.props;
+  renderItem = ({ item, index }) => {
+    const { showAnimation, showSeparator, itemStyle } = this.props;
 
     const viewStyles = [];
     viewStyles.push(this.styles.itemContainer);
@@ -100,13 +126,24 @@ export default class GridList extends PureComponent {
               { opacity: this.animatedValue[index] },
             ]}
           >
-            {renderItem({ item, index, animation: this.animations[index] })}
+            {this._renderItem({
+              item,
+              index,
+              animation: this.animations[index],
+            })}
           </Animated.View>
         ) : (
-          renderItem({ item, index })
+          this._renderItem({ item, index })
         )}
       </View>
     );
+  };
+
+  renderChildren = ({ item, animation }) => {
+    if (animation) {
+      animation.start();
+    }
+    return item;
   };
 
   render() {
@@ -120,7 +157,8 @@ export default class GridList extends PureComponent {
         }
         showsVerticalScrollIndicator={false}
         {...props}
-        renderItem={this._renderItem}
+        data={this._data}
+        renderItem={this.renderItem}
       />
     );
   }

@@ -1,6 +1,15 @@
 import React, { PureComponent } from 'react';
-import { Text, ScrollView, Image, StyleSheet, View } from 'react-native';
+import {
+  Dimensions,
+  Text,
+  ScrollView,
+  Image,
+  StyleSheet,
+  View,
+} from 'react-native';
 import GridList from 'react-native-grid-list';
+
+export const { width, height } = Dimensions.get('window');
 
 const newImage = {
   0: 'business',
@@ -44,9 +53,6 @@ export default class App extends PureComponent {
       onLoad={() => animation.start()}
     />
   );
-  renderItemSeparator = ({ item }) => (
-    <Image style={styles.image} source={item.thumbnail} />
-  );
 
   render() {
     return (
@@ -77,17 +83,24 @@ export default class App extends PureComponent {
           />
         </View>
 
-        {/* Separator */}
-        <Text>Separator</Text>
+        {/* Separator with children */}
+        <Text>Separator with children</Text>
         <View style={styles.girdSeparator}>
           <GridList
             showSeparator
-            data={itemsSeparator}
             numColumns={2}
-            renderItem={this.renderItemSeparator}
             separatorBorderWidth={25}
-            separatorBorderColor={'white'}
-          />
+            separatorBorderColor={'teal'}
+          >
+            <View style={[styles.child, { backgroundColor: 'thistle' }]}>
+              <Text style={styles.text}>1</Text>
+            </View>
+            <Image style={styles.image} source={itemsSeparator[0].thumbnail} />
+            <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
+              <Text style={styles.text}>3</Text>
+            </View>
+            <Image style={styles.image} source={itemsSeparator[3].thumbnail} />
+          </GridList>
         </View>
       </ScrollView>
     );
@@ -116,5 +129,13 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+  },
+  child: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: width * 0.2,
+    textAlign: 'center',
   },
 });
