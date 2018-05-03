@@ -6,7 +6,7 @@
 [![travis](https://travis-ci.org/gusgard/react-native-grid-list.svg?branch=master)](https://travis-ci.org/gusgard/react-native-grid-list)
 ![license](https://img.shields.io/npm/l/react-native-grid-list.svg)
 
-![Demo](./demo.gif)
+![Demo](https://raw.githubusercontent.com/gusgard/react-native-grid-list/master/demo.gif)
 
 ## Installation
 
