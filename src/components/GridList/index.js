@@ -101,7 +101,7 @@ export default class GridList extends PureComponent {
     }
   }
 
-  _keyExtractor = (item, index) => index;
+  _keyExtractor = (item, index) => index.toString();
 
   renderItem = ({ item, index }) => {
     const { showAnimation, showSeparator, itemStyle } = this.props;
