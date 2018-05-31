@@ -22,7 +22,7 @@ export default class GridList extends PureComponent {
     // Only is allowed children or data not both
     children(props, propName) {
       const { data } = props;
-      if (!props[propName] && data && data.length === 0) {
+      if (!props[propName] && !data) {
         return new Error('Invalid props, `data` or `children` is required');
       }
       if (data && data.length !== 0 && !props.renderItem) {
@@ -34,6 +34,7 @@ export default class GridList extends PureComponent {
 
   static defaultProps = {
     numColumns: 3,
+    data: [],
     itemStyle: {},
     showSeparator: false,
     showAnimation: false,

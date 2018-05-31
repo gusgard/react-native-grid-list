@@ -17,6 +17,16 @@ describe('grid list', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+  
+  it('renders empty list', () => {
+    const wrapper = shallow(
+      <GridList
+        data={[]}
+        renderItem={({ item }) => <Image source={item.thumbnail} />}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('renders showSeparator', () => {
     const wrapper = shallow(
