@@ -70,7 +70,7 @@ export default class GridList extends PureComponent {
     this.setup(this.props);
     this.animate();
   }
-  componentWillUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
     this.setup(nextProps);
     this.animate();
   }
