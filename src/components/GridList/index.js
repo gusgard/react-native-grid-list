@@ -159,6 +159,7 @@ export default class GridList extends PureComponent {
         showsVerticalScrollIndicator={false}
         {...props}
         data={this._data}
+        extraData={this._data}
         renderItem={this.renderItem}
       />
     );
